@@ -13,11 +13,11 @@ public:
         int j = M-1;
         
         /* if (N == 0)
-            return 0;
+            return -1;
    
         int smallest = mat[0][0], largest = mat[N-1][N-1];
         if (X < smallest || X > largest)
-            return 0; */
+            return -1; */
     
         while(i<N && j>=0) {
             if(mat[i][j] == X)
