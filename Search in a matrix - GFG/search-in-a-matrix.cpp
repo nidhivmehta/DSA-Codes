@@ -19,7 +19,7 @@ public:
         if (X < smallest || X > largest)
             return 0; */
     
-        while(i<N and j>=0) {
+        while(i<N && j>=0) {
             if(mat[i][j] == X)
                 return 1;
             if(mat[i][j] > X)
