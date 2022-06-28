@@ -4,29 +4,32 @@ public:
         vector<vector<int>> res; 
         sort(nums.begin(), nums.end()); 
         
-        // moves for a
-        for (int i = 0; i < (int)(nums.size())-2; i++) {
+        for (int i=0; i<(int)(nums.size())-2; i++) {
             
-            if (i == 0 || (i > 0 && nums[i] != nums[i-1])) {
+            if (i==0 || (i>0 && nums[i] != nums[i-1])) {
                 
-                int lo = i+1, hi = (int)(nums.size())-1, sum = 0 - nums[i];
+                int low=i+1, high=(int)(nums.size())-1, sum=0-nums[i];
                 
-                while (lo < hi) {
-                    if (nums[lo] + nums[hi] == sum) {
+                while(low<high) {
+                    if (nums[low]+nums[high] == sum) {
                         
                         vector<int> temp; 
                         temp.push_back(nums[i]); 
-                        temp.push_back(nums[lo]); 
-                        temp.push_back(nums[hi]); 
+                        temp.push_back(nums[low]); 
+                        temp.push_back(nums[high]); 
                         res.push_back(temp);
                         
-                        while (lo < hi && nums[lo] == nums[lo+1]) lo++;
-                        while (lo < hi && nums[hi] == nums[hi-1]) hi--;
+                        while (low<high && nums[low]==nums[low+1]) 
+                            low++;
+                        while (low<high && nums[high] == nums[high-1]) 
+                            high--;
                         
-                        lo++; hi--;
+                        low++; high--;
                     } 
-                    else if (nums[lo] + nums[hi] < sum) lo++;
-                    else hi--;
+                    else if(nums[low]+nums[high]<sum) 
+                        low++;
+                    else 
+                        high--;
                }
             }
         }
