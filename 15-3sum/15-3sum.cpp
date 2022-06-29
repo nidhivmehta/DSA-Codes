@@ -8,7 +8,9 @@ public:
             
             if (i==0 || (i>0 && nums[i] != nums[i-1])) {
                 
-                int low=i+1, high=(int)(nums.size())-1, sum=0-nums[i];
+                int low=i+1;
+                int high=(int)(nums.size())-1;
+                int sum=0-nums[i];
                 
                 while(low<high) {
                     if (nums[low]+nums[high] == sum) {
