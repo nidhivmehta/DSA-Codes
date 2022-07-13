@@ -1,0 +1,15 @@
+#include <bits/stdc++.h> 
+int solve(int i, int j) {
+    if(i==0 && j==0)
+        return 1;
+    if(i<0 || j<0)
+        return 0;
+    
+    int left = solve(i-1, j);
+    int right = solve(i, j-1);
+    return left + right;
+}
+
+int uniquePaths(int m, int n) {
+	return solve(m-1, n-1);
+}
