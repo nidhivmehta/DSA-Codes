@@ -11,7 +11,7 @@ int solve(int index, int k, vector<int> &heights, vector<int> &dp) {
     int minSteps = INT_MAX;
     if(int j=1; j<=k; j++) {
         if(index-j >= 0) 
-            dp[index] = solve(index-j, k, heights);
+            dp[index] = solve(index-j, k, heights) + abs(heights[index]- height[index-j]);;
         
         minSteps = min(dp[index], minSteps);
     }
