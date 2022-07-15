@@ -1,0 +1,25 @@
+Memoization
+
+#include<bits/stdc++.h>
+int solve(int index, int k, vector<int> &heights, vector<int> &dp) {
+    if(index == 0)
+        return 0;
+    
+    if(dp[index] != -1)
+        return dp[index];
+    
+    int minSteps = INT_MAX;
+    if(int j=1; j<=k; j++) {
+        if(index-j >= 0) 
+            dp[index] = solve(index-j, k, heights);
+        
+        minSteps = min(dp[index], minSteps);
+    }
+    return dp[index] = minSteps;
+}
+
+int frogJump(int n, int k, vector<int> &heights)
+{
+    vector<int> dp(n, -1);
+    return solve(n-1, k, heights, dp);
+}
