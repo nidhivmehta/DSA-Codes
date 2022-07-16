@@ -2,7 +2,7 @@ class Solution {
 public:
     int maximumNonAdjacentSum(vector<int> &nums){
     int n = nums.size();
-    vector dp(n, -1);
+    vector<int> dp(n, -1);
     int prev = nums[0];
     int prev2 = 0;
 
@@ -20,6 +20,7 @@ public:
     }
     return prev;
     }
+    
     int rob(vector<int>& nums) {
         int n = nums.size();
         vector<int> temp1, temp2;
