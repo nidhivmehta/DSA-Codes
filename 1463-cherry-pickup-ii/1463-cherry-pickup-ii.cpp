@@ -17,7 +17,7 @@ public:
         int maxi = INT_MIN;
         for(int di=-1; di<=1; di++) {
             for(int dj=-1; dj<=1; dj++) {
-                int value;
+                int value = 0;
                 
                 if(j1 == j2)
                     value = grid[i][j1] + solve(i+1, j1+di, j2+dj, r, c, grid, dp);
