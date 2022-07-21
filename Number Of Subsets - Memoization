@@ -1,0 +1,24 @@
+int solve(int index, int sum, vector<int> num, vector<vector<int>> dp) {
+        if(sum == 0)
+            return 1;
+        if(index == 0)
+            return num[0] == sum;
+        if(dp[index][sum] != -1)
+            return dp[index][sum];
+            
+        int notPick = solve(index-1, sum, num, dp);
+        
+        int pick = 0;
+        if(num[index]<=sum)
+            pick = solve(index-1, sum-num[index], num, dp);
+            
+        return dp[index][sum] = notPick + pick;
+            
+        
+    }
+int findWays(vector<int> &num, int tar) 
+{
+    int n = num.size();
+    vector<vector<int>> dp(n, vector<int>(tar+1, -1));
+    return solve(n-1, tar, num, dp);
+}
