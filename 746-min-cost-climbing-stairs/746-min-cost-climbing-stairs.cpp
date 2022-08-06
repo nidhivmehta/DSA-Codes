@@ -1,14 +1,5 @@
 class Solution {
 public:
-    int solve(vector<int> cost, int index, vector<int> &dp) {
-        if(index>=cost.size())
-            return 0;
-        if(dp[index]!=-1)
-            return dp[index];
-        
-        return min(solve(cost, index+1, dp), solve(cost, index+2, dp)) + cost[index];
-    }
-    
     int minCostClimbingStairs(vector<int>& cost) {
         int n = cost.size();
         vector<int> dp(n+2);
