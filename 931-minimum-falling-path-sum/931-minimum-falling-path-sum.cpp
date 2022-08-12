@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int solve(int i, int j, vector<vector<int>>& matrix, vector<vector<int>> &dp) {
+    int solve(int i, int j, vector<vector<int>> &matrix, vector<vector<int>> &dp) {
         if(j<0 || j>=matrix[0].size())
             return 1e8;
         if(i==0)
