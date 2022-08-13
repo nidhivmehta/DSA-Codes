@@ -9,16 +9,16 @@ public:
         
         int low = 0;
         int high = (n*m)-1;
-        int mid;
         
         while(low<=high) {
-            mid = (low+(high-low)/2);
-            if(matrix[mid/m][mid%m]==target)
+            int mid = low+(high-low)/2;
+            
+            if(matrix[mid/m][mid%m] == target)
                 return true;
-            else if(matrix[mid/m][mid%m] < target) 
-                low = mid+1;
-            else
+            if(matrix[mid/m][mid%m] > target)
                 high = mid-1;
+            else
+                low = mid+1;    
         }
         return false;
     }
