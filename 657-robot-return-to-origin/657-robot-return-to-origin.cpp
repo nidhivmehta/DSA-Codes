@@ -11,11 +11,13 @@ public:
                 UD--;
             else if(moves[i] == 'L')
                 LR++;
-            else
+            else if(moves[i] == 'R')
                 LR--;
+            
         }
         if(UD==0 && LR==0)
             return true;
-        return false;
+        else
+            return false;
     }
 };
