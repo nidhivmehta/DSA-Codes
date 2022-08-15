@@ -17,10 +17,8 @@ public:
                 }
                 shortest = min(shortest, right-left+2);
             }
-        right++;  
+            right++; 
         }
-        
-        return shortest==INT_MAX?0:shortest;
-        
+        return shortest==INT_MAX? 0:shortest;
     }
 };
