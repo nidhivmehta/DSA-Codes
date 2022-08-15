@@ -7,12 +7,12 @@ public:
             if(minpq.size()<k)
                 minpq.push(nums[i]);
             else {
-                if(minpq.top() < nums[i]) {
+                if(minpq.top()<nums[i]) {
                     minpq.pop();
                     minpq.push(nums[i]);
                 }
-            }    
+            }
         }
-        return minpq.top(); 
+        return minpq.top();
     }
 };
