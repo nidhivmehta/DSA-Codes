@@ -15,7 +15,6 @@ public:
         for(auto itr=mpp.begin(); itr!=mpp.end(); itr++) {
             result.push_back(itr->second);
         }
-        
         return result;
     }
 };
