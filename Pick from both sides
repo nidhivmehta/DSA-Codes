@@ -1,0 +1,20 @@
+int Solution::solve(vector<int> &A, int B) {
+    int sum=0;
+    int i=0;
+    
+    for(;i<B;i++)
+        sum+=A[i];
+    
+    int Max=sum;
+    i--;
+    int j=A.size()-1;
+    
+    while(B--){
+        sum=sum-A[i]+A[j];
+        if(Max<sum)
+            Max=sum;
+        j--;
+        i--;
+    }
+    return Max;
+}
