@@ -1,0 +1,22 @@
+int Solution::solve(vector<int> &A) {
+    int i;
+    int n = A.size();
+    vector<int> upper(n);
+    upper[n-1] = A[n-1];
+    
+    for(i=n-2; i>=0; i--) {
+        upper[i] = max(upper[i+1], A[i]);
+    }
+    
+    set<int> lower;
+    lower.insert(A[0]);
+    int ans = 0;
+    
+    for(i=1; i<n; i++) {
+        lower.insert(A[i]);
+        auto it = lower.find(A[i]);
+        if(it!=lower.begin() && A[i]!=upper[i])
+            ans = max(ans, *--it + A[i] + upper[i]);
+    }
+    return ans;
+}
