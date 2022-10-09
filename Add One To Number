@@ -1,0 +1,39 @@
+vector<int> Solution::plusOne(vector<int> &A) {
+    int n = A.size();
+    int sum = 0;
+    int carry = 0;
+    
+    sum = A[n-1]+1;
+    A[n-1] = sum%10;
+    carry = sum/10;
+    
+    for(int i=n-2; i>=0; i--) {
+        sum = A[i] + carry;
+        A[i] = sum%10;
+        carry = sum/10;
+    }
+    
+    vector<int> ans;
+    if(carry==1) {
+        ans.push_back(1);
+    
+        for(int i=0; i<n; i++) {
+            ans.push_back(A[i]);
+        }
+        return ans;
+    }
+    else {
+        bool zeroes = true;
+        for(int i=0; i<n; i++) {
+            if(A[i]!=0)
+                zeroes = false;
+            if(zeroes == false)
+                ans.push_back(A[i]);     
+        }
+        return ans;
+    }
+    
+    
+        
+    
+}
