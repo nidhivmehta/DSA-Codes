@@ -52,8 +52,8 @@ public:
         int lb = lower_bound(nums, target, n);
         if(lb==n || nums[lb]!=target)
             return 0;
-        int ub = upper_bound(nums, target, n);
-        return ub-lb;
+        int ub = upper_bound(nums, target, n)-1;
+        return ub-lb+1;
 	}
 };
 
