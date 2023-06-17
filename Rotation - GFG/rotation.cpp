@@ -25,11 +25,11 @@ public:
                 low = mid+1;
             }
             else{
-                high = mid-1;
                 if(nums[mid]<ans) {
                     index = mid;
                     ans = nums[mid];
                 }
+                high = mid-1;
             }
         }
         return index;
