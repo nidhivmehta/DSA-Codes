@@ -16,6 +16,14 @@ public:
 
         while(low<=high) {
             int mid = (low+high)/2;
+            
+            if(nums[low]<=nums[high]) {
+                if(nums[low]<ans) {
+                    index = low;
+                    ans = nums[low];
+                }
+                break;
+            }
 
             if(nums[low]<=nums[mid]) {
                 if(nums[low]<ans) {
